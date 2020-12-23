@@ -1,11 +1,11 @@
 import React from 'react'
 
-export function Experience(props) {
+export function Page(props) {
     
 
     return (
         <>
-            <p>trải nghiệm</p>
+            <p>Trải nghiệm</p>
         </>
     )
 }
