@@ -55,7 +55,7 @@ export default function DDrawer({ open, toggleDrawer, navigations }) {
       <List>
       <ListItem >
             <ListItemIcon></ListItemIcon>
-            <Link href="[page]" as="dfdfdf">
+            <Link href="/">
                   <a style={{color: 'white'}}><h4>Lux Journey</h4></a>
                 </Link>
           </ListItem>
@@ -67,7 +67,7 @@ export default function DDrawer({ open, toggleDrawer, navigations }) {
       ].map(({ title, slug }, index) => (
           <ListItem button key={slug}>
             <ListItemIcon style={{color: 'white'}}>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-            <Link href="[page]" as={`/${slug}`}>
+            <Link href={`${slug}`}>
                   <a className={clsx(classes.aTag, currentSlug===`/${slug}`? classes.active: '')}>{title}</a>
                 </Link>
           </ListItem>
