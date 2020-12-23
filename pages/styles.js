@@ -54,4 +54,9 @@ export const TraiNghiemStyles = styled.div`
     }
     margin-bottom: 7rem;
   }
+  .card-wrapper {
+      margin-top: 5rem;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr)
+  }
 `;
