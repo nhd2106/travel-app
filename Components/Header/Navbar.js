@@ -67,8 +67,25 @@ export default function DNavbar({ navigations }) {
               <MenuIcon />
             </IconButton>
           </Hidden>
-          <Container>
-            <Grid container>
+          <Container style = {{
+            display: 'flex',
+            justifyContent: 'space-between'
+          }}>
+            <div style = {{
+              flex: ' 1 1 40rem'
+            }}>
+              <Link href="/">
+                <a style={{ 
+                  textDecoration: 'none',
+                  color: 'white',
+                  fontSize: 'calc(1rem + 1vw)'
+                }}>Lux Journey</a>
+              </Link>
+            </div>
+            <Grid container style = {{
+              flex: ' 1, 1, 40rem',
+              alignItems: 'center'
+            }}>
               <Grid item lg={9}>
                 {[
                   { title: "Khách sạn", slug: "/khach-san" },

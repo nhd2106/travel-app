@@ -56,7 +56,7 @@ export default function DDrawer({ open, toggleDrawer, navigations }) {
       <ListItem >
             <ListItemIcon></ListItemIcon>
             <Link href="[page]" as="dfdfdf">
-                  <a><img width="100%" src="/ga-nuong-com-lam-cover.gif"/></a>
+                  <a style={{color: 'white'}}><h4>Lux Journey</h4></a>
                 </Link>
           </ListItem>
       {[
@@ -66,7 +66,7 @@ export default function DDrawer({ open, toggleDrawer, navigations }) {
           { title: "Liên hệ", slug: '/lien-he'},
       ].map(({ title, slug }, index) => (
           <ListItem button key={slug}>
-            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+            <ListItemIcon style={{color: 'white'}}>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
             <Link href="[page]" as={`/${slug}`}>
                   <a className={clsx(classes.aTag, currentSlug===`/${slug}`? classes.active: '')}>{title}</a>
                 </Link>
@@ -88,6 +88,7 @@ export default function DDrawer({ open, toggleDrawer, navigations }) {
             classes={{
               paperAnchorLeft: classes.paperAnchorLeft
             }}
+            // transitionDuration={{enter: 1.5, exit: 1.5}}
           >
             {list()}
           </SwipeableDrawer>

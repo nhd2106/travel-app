@@ -1,19 +1,30 @@
 import { DefaultSeo } from "next-seo";
-
-import { Header } from "../components";
-// import "slick-carousel/slick/slick.css";
-// import "slick-carousel/slick/slick-theme.css";
-// import "react-owl-carousel2/lib/styles.css";
+import "../styles/globals.css";
+import Header from "../components/Header";
 import { StylesProvider } from "@material-ui/core/styles";
-// import SEO from '../next-seo.config';
+
 import { get, filter } from "lodash/fp";
 import Head from "next/head";
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 
+import SEO from '../next-seo.config';
 function App({ Component, pageProps }) {
   return (
     <>
+      <Head>
+      <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+          />
+          <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          />
+           <link rel="icon" href="/travel-case.svg"/>
+      </Head>
       <StylesProvider injectFirst>
-        {/* <DefaultSeo {...SEO}/> */}
+        <DefaultSeo {...SEO}/>
         <Header />
 
         <Component {...pageProps} />
