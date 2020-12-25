@@ -18,12 +18,13 @@ const useStyles = makeStyles({
 });
 
 const MediaCard = ({
-    image
+    image,
+    onClick
 }) => {
   const classes = useStyles();
 
   return (
-    <Card className={classes.root}>
+    <Card className={classes.root} onClick={onClick} type="button">
       <CardActionArea>
         <CardMedia
           className={classes.media}

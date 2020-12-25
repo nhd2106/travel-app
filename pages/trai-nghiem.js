@@ -1,9 +1,20 @@
-import React from "react";
-
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useRouter } from "next/router";
+import Link from "next/link";
 import MediaCard from "../Components/Card";
 import { TraiNghiemStyles } from "./styles";
 
+import { handlerGetPosts } from "../redux/actions/blog";
+
 export default function TraiNghiem(props) {
+  const posts = useSelector(({ blog }) => blog.posts);
+  console.log(posts);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(handlerGetPosts());
+  }, []);
+  const router = useRouter();
   return (
     <TraiNghiemStyles>
       <div className="top-images">
@@ -13,17 +24,25 @@ export default function TraiNghiem(props) {
         </div>
         <div className="image"></div>
       </div>
-      <div>
-      </div>
+      <div></div>
       <h2>Phú Quốc nè</h2>
-        <div className="card-wrapper">
-          <MediaCard image="/mongolia.jpg"/>
-          <MediaCard image="/muongthanh.jpg"/>
-          <MediaCard image="/sonesea.jpg"/>
-          <MediaCard image="/mongolia.jpg"/>
-          <MediaCard image="/mongolia.jpg"/>
-    
-        </div>
+
+      <div className="card-wrapper">
+        {posts ? posts.map((post) => {
+          const {
+            og_img: { url },
+            id,
+          } = post || "";
+          console.log(url);
+          return (
+            <Link href="/posts/[id]" as={`posts/${id}`}>
+              <a>
+                <MediaCard image={`http://localhost:1337${url}`} />
+              </a>
+            </Link>
+          );
+        }): null}
+      </div>
     </TraiNghiemStyles>
   );
 }
