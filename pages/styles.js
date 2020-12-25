@@ -66,7 +66,8 @@ export const LienHeStyles = styled.div`
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: linear-gradient(rgba(255, 255, 255, 0.5), transparent), url("/phuquoc.jpg");
+  background: linear-gradient(rgba(255, 255, 255, 0.5), transparent),
+    url("/phuquoc.jpg");
   width: 100%;
   height: 100%;
   background-position: center;
@@ -75,16 +76,21 @@ export const LienHeStyles = styled.div`
   .form-wrapper {
     min-height: 70vh;
     min-width: 70vw;
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.9);
     border-radius: 1rem;
-    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1), 0px 20px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1),
+      0px 20px 20px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: center;
     alin-items: center;
-    
-    div {
+
+    .right,
+    .left {
       text-align: center;
       width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
     }
   }
 `;
