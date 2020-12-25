@@ -55,8 +55,36 @@ export const TraiNghiemStyles = styled.div`
     margin-bottom: 7rem;
   }
   .card-wrapper {
-      margin-top: 5rem;
-      display: grid;
-      grid-template-columns: repeat(5, 1fr)
+    margin-top: 5rem;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+  }
+`;
+
+export const LienHeStyles = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(rgba(255, 255, 255, 0.5), transparent), url("/phuquoc.jpg");
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  .form-wrapper {
+    min-height: 70vh;
+    min-width: 70vw;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 1rem;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1), 0px 20px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    alin-items: center;
+    
+    div {
+      text-align: center;
+      width: 100%;
+    }
   }
 `;

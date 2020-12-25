@@ -54,7 +54,7 @@ export default function DNavbar({ navigations }) {
   };
   return (
     <>
-      <AppBar position="static" style={{ background: "#393A44" }}>
+      <AppBar position="fixed" style={{ background: "#393A44" }}>
         <Toolbar>
           <Hidden smUp>
             <IconButton
