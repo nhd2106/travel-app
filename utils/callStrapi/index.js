@@ -5,6 +5,6 @@ const { API_URL } = process.env;
 export const fetchStrapi = (endUrl) => {
   return axios.request({
     method: "GET",
-    url: `http://localhost:1337/${endUrl}`,
+    url: `${API_URL}/${endUrl}`,
   });
 };

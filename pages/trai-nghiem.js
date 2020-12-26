@@ -28,20 +28,22 @@ export default function TraiNghiem(props) {
       <h2>Phú Quốc nè</h2>
 
       <div className="card-wrapper">
-        {posts ? posts.map((post) => {
-          const {
-            og_img: { url },
-            id,
-          } = post || "";
-          console.log(url);
-          return (
-            <Link href="/posts/[id]" as={`posts/${id}`}>
-              <a>
-                <MediaCard image={`http://localhost:1337${url}`} />
-              </a>
-            </Link>
-          );
-        }): null}
+        {posts
+          ? posts.map((post) => {
+              const {
+                og_img: { url },
+                id,
+                title
+              } = post || "";
+              return (
+                <Link href="/posts/[id]" as={`posts/${id}`}>
+                  <a>
+                    <MediaCard image={`http://localhost:1337${url}`} title={title} />
+                  </a>
+                </Link>
+              );
+            })
+          : null}
       </div>
     </TraiNghiemStyles>
   );
