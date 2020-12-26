@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import styles from "../styles/Home.module.css";
 import Destinations from "../Components/Destinations";
-import Carousel from '../Components/Carousel';
+import Carousel from "../Components/Carousel";
 
 import { HotelTypes } from "./styles";
 export default function Home() {
@@ -15,7 +15,7 @@ export default function Home() {
       <section className="imageCover">
         {/* <div className={styles.carousel}>
         </div> */}
-        <Carousel/>
+        <Carousel />
       </section>
       <div
         style={{
@@ -88,8 +88,6 @@ export default function Home() {
           </HotelTypes>
         </div>
       </div>
-
-      
     </div>
   );
 }

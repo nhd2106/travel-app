@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useRouter } from "next/router";
-import Link from "next/link";
 import MediaCard from "../../Components/Card";
 import { TraiNghiemStyles } from "../styles";
+
+import Slider from "react-slick";
 
 import { handlerGetPosts } from "../../redux/actions/blog";
 
@@ -13,7 +13,39 @@ export default function TraiNghiem(props) {
   useEffect(() => {
     dispatch(handlerGetPosts());
   }, []);
-  const router = useRouter();
+  const settings = {
+    infinite: false,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 4,
+    initialSlide: 0,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
   return (
     <TraiNghiemStyles>
       <div className="top-images">
@@ -155,28 +187,116 @@ export default function TraiNghiem(props) {
       <div></div>
       <h2>Phú Quốc nè</h2>
 
-      <div className="card-wrapper">
+      {/* <div className="card-wrapper">
         {posts
           ? posts.map((post) => {
               const {
                 og_img: { url },
                 id,
                 title,
-                shortDesc
+                shortDesc,
               } = post || "";
               return (
-                <Link href="/trai-nghiem/[id]" as={`trai-nghiem/${id}`}>
-                  <a>
-                    <MediaCard
-                      image={`http://localhost:1337${url}`}
-                      title={title}
-                      description={shortDesc}
-                    />
-                  </a>
-                </Link>
+                <MediaCard
+                  image={`http://localhost:1337${url}`}
+                  title={title}
+                  description={shortDesc}
+                  id={id}
+                />
               );
             })
           : null}
+      </div> */}
+      <div style={{ marginBottom: "3rem" }}>
+        {posts ? (
+          <Slider {...settings}>
+            {posts.map((post) => {
+              const {
+                og_img: { url },
+                id,
+                title,
+                shortDesc,
+              } = post || "";
+              return (
+                <MediaCard
+                  image={`http://localhost:1337${url}`}
+                  title={title}
+                  description={shortDesc}
+                  id={id}
+                />
+              );
+            })}
+          </Slider>
+        ) : null}
+      </div>
+      <h2>Đà Lạt</h2>
+      <div style={{ marginBottom: "3rem" }}>
+        {posts ? (
+          <Slider {...settings}>
+            {posts.map((post) => {
+              const {
+                og_img: { url },
+                id,
+                title,
+                shortDesc,
+              } = post || "";
+              return (
+                <MediaCard
+                  image={`http://localhost:1337${url}`}
+                  title={title}
+                  description={shortDesc}
+                  id={id}
+                />
+              );
+            })}
+          </Slider>
+        ) : null}
+      </div>
+      <h2>Nha Trang</h2>
+      <div style={{ marginBottom: "3rem" }}>
+        {posts ? (
+          <Slider {...settings}>
+            {posts.map((post) => {
+              const {
+                og_img: { url },
+                id,
+                title,
+                shortDesc,
+              } = post || "";
+              return (
+                <MediaCard
+                  image={`http://localhost:1337${url}`}
+                  title={title}
+                  description={shortDesc}
+                  id={id}
+                />
+              );
+            })}
+          </Slider>
+        ) : null}
+      </div>
+      <h2>Đà Lạt</h2>
+      <div style={{ marginBottom: "3rem" }}>
+        {posts ? (
+          <Slider {...settings}>
+            {posts.map((post) => {
+              const {
+                og_img: { url },
+                id,
+                title,
+                shortDesc,
+              } = post || "";
+              return (
+                <MediaCard
+                  image={`http://localhost:1337${url}`}
+                  title={title}
+                  description={shortDesc}
+                  id={id}
+                />
+              );
+            })}
+          </Slider>
+        ) : null}
       </div>
     </TraiNghiemStyles>
   );

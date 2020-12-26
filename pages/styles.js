@@ -27,7 +27,7 @@ export const HotelTypes = styled.div`
 export const TraiNghiemStyles = styled.div`
   min-height: 76vh;
   width: 90%;
-  margin: 7rem auto;
+  margin: 3rem auto;
   .top-images {
     height: 100%;
     width: 100%;
@@ -52,7 +52,7 @@ export const TraiNghiemStyles = styled.div`
       // background-repeat: no-repeat;
       // min-height: 76vh;
       svg {
-        width: 100%;  
+        width: 100%;
       }
     }
     margin-bottom: 7rem;
@@ -62,15 +62,37 @@ export const TraiNghiemStyles = styled.div`
     display: grid;
     grid-template-columns: repeat(5, 1fr);
   }
+  .MuiTypography-h5,
+  .MuiTypography-title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .MuiCardHeader-content {
+    overflow: hidden;
+  }
   @media screen and (max-width: 599px) {
+    margin: 3rem auto;
+    .card-wrapper {
+      grid-template-columns: repeat(1, 1fr);
+    }
     .top-images {
       flex-direction: column;
-      .text, .image {
+      min-height: 50vh;
+      margin-bottom: 3rem;
+
+      .text,
+      .image {
         flex: unset;
       }
       svg {
-        heigh t: 10rem;
+        height: 15rem;
       }
+    }
+  }
+  @media screen and (min-width: 600px, max-width: 1024px) {
+    .card-wrapper {
+      grid-template-columns: repeat(2, 1fr);
     }
   }
 `;
@@ -117,7 +139,19 @@ export const LienHeStyles = styled.div`
       width: 100%;
     }
   }
- 
+  @media screen and (max-width: 599px) {
+    .form-wrapper {
+      min-height: 60vh;
+      min-width: 95vw;
+      background: rgba(255, 255, 255, 0.5);
+    }
+    .button-submit {
+      display: flex;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+    }
+  }
 `;
 
 export const BlogStyles = styled.div`
@@ -128,4 +162,24 @@ export const BlogStyles = styled.div`
   iframe {
     width: 100%;
   }
-`
+`;
+export const BlogCover = styled.div`
+  .cover {
+    background: url(${(props) => {
+      return `${props.coverUrl}`;
+    }});
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    min-height: 70vh;
+    margin-bottom: 3rem;
+  }
+
+  @media screen and (max-width: 599px) {
+    .cover {
+      min-height: 20vh;
+    }
+  }
+`;

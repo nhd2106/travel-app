@@ -20,21 +20,21 @@ export default function AppCarousel() {
         <Slider style={{ overflow: "hidden" }} {...settings}>
           <div>
             <img
-              style={{ minHeight: "30vh", width: "100%", display: "block" }}
+              style={{ minHeight: "20vh", width: "100%", display: "block" }}
               src="/phuquoc.jpg"
               alt="First slide"
             />
           </div>
           <div>
             <img
-              style={{ minHeight: "30vh", width: "100%", display: "block" }}
+              style={{ minHeight: "20vh", width: "100%", display: "block" }}
               src="/phuquoc.jpg"
               alt="Third slide"
             />
           </div>
           <div>
             <img
-              style={{ minHeight: "30vh", width: "100%", display: "block" }}
+              style={{ minHeight: "20vh", width: "100%", display: "block" }}
               src="/phuquoc.jpg"
               alt="Third slide"
             />

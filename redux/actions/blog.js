@@ -6,7 +6,6 @@ import { fetchStrapi } from "../../utils/callStrapi";
 function* fetchPosts() {
   try {
     const { data: posts } = yield call(fetchStrapi, "posts");
-    console.log('called')
     yield put({
       type: BLOG.update,
       posts,
@@ -19,7 +18,6 @@ function* fetchPosts() {
 function* fetchPostDetails({ id }) {
   try {
     const { data: postDetails } = yield call(fetchStrapi, `posts/${id}`);
-    console.log(postDetails);
     yield put({
       type: BLOG.update,
       postDetails,

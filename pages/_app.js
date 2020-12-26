@@ -7,15 +7,14 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { get, filter } from "lodash/fp";
 import Head from "next/head";
-import Router from 'next/router';
+import Router from "next/router";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-
 import ArrowUpwardIcon from "@material-ui/icons/ArrowUpward";
 import Button from "@material-ui/core/Button";
-import Waiting from '../Components/Waiting';
-import Loader from '../Components/Loader';
+import Waiting from "../Components/Waiting";
+import Loader from "../Components/Loader";
 
 import SEO from "../next-seo.config";
 import { wrapper } from "../store";
@@ -29,25 +28,24 @@ const useStyles = makeStyles({
     boxShadow: "none",
     outline: "none",
     borderRadius: "50% 50%",
-    height: "4rem",
-    width: "4rem",
+    height: "3rem",
+    width: "3rem",
+    minWidth: "unset",
   },
-
 });
 function App({ Component, pageProps }) {
   const [is_visible, setIs_visible] = useState(false);
-  const [isLoading, setIsLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(false);
 
-  Router.events.on('routeChangeStart', () => {
+  Router.events.on("routeChangeStart", () => {
     setIsLoading(true);
-  })
-  Router.events.on('routeChangeComplete', () => {
+  });
+  Router.events.on("routeChangeComplete", () => {
     setIsLoading(false);
-
-  })
+  });
   const toggleVisibility = () => {
     if (window.pageYOffset > 300) {
-      setIs_visible(true)
+      setIs_visible(true);
     } else {
       setIs_visible(false);
     }
@@ -55,17 +53,16 @@ function App({ Component, pageProps }) {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth"
+      behavior: "smooth",
     });
-  }
+  };
   useEffect(() => {
-    document.addEventListener('scroll', function(e) {
-      toggleVisibility()
-    })
+    document.addEventListener("scroll", function (e) {
+      toggleVisibility();
+    });
   }, []);
 
   const classes = useStyles();
-  console.log(isLoading)
   return (
     <>
       <Head>
@@ -81,14 +78,21 @@ function App({ Component, pageProps }) {
       </Head>
       <StylesProvider injectFirst>
         <DefaultSeo {...SEO} />
-        {/* { isLoading ? <Waiting fullscreen type="StickyBallLoading" /> : null } */}
-        { isLoading ? <Loader color="#fff" type="cylon" /> : null }
+        {isLoading ? <Waiting fullscreen type="WindMillLoading" /> : null}
+        {/* { isLoading ? <Loader color="#fff" type="cylon" /> : null } */}
         <Header />
 
         <Component {...pageProps} />
-        {is_visible ? <Button variant="contained" color="primary"  className={classes.button} onClick={scrollToTop}>
-          <ArrowUpwardIcon />
-        </Button> : null}
+        {is_visible ? (
+          <Button
+            variant="contained"
+            color="primary"
+            className={classes.button}
+            onClick={scrollToTop}
+          >
+            <ArrowUpwardIcon />
+          </Button>
+        ) : null}
         <Footer />
       </StylesProvider>
     </>
