@@ -19,22 +19,22 @@ export default function AppCarousel() {
         <Slider style={{ overflow: "hidden" }} {...settings}>
           <div>
             <img
-              className="d-block w-100"
-              src="https://bizweb.dktcdn.net/100/348/213/themes/719322/assets/slider_1.png?1595476525489"
+              style={{ minHeight: '30vh', width: '100%', display: 'block' }}
+              src="/phuquoc.jpg"
               alt="First slide"
             />
           </div>
           <div>
             <img
-              className="d-block w-100"
-              src="https://bizweb.dktcdn.net/100/348/213/themes/719322/assets/slider_1.png?1595476525489"
+              style={{ minHeight: '30vh', width: '100%', display: 'block' }}
+              src="/phuquoc.jpg"
               alt="Third slide"
             />
           </div>
           <div>
             <img
-              className="d-block w-100"
-              src="https://bizweb.dktcdn.net/100/348/213/themes/719322/assets/slider_1.png?1595476525489"
+              style={{ minHeight: '30vh', width: '100%', display: 'block' }}
+              src="/phuquoc.jpg"
               alt="Third slide"
             />
           </div>

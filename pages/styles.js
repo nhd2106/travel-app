@@ -44,13 +44,16 @@ export const TraiNghiemStyles = styled.div`
 
     .image {
       flex: 4 1 100rem;
-      background: url("/trainghiemimages.jpg");
-      width: 100%;
-      height: 100%;
-      background-position: center;
-      background-size: cover;
-      background-repeat: no-repeat;
-      min-height: 76vh;
+      // background: url("/trainghiemimages.jpg");
+      // width: 100%;
+      // height: 100%;
+      // background-position: center;
+      // background-size: cover;
+      // background-repeat: no-repeat;
+      // min-height: 76vh;
+      svg {
+        width: 100%;  
+      }
     }
     margin-bottom: 7rem;
   }
@@ -58,6 +61,17 @@ export const TraiNghiemStyles = styled.div`
     margin-top: 5rem;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
+  }
+  @media screen and (max-width: 599px) {
+    .top-images {
+      flex-direction: column;
+      .text, .image {
+        flex: unset;
+      }
+      svg {
+        heigh t: 10rem;
+      }
+    }
   }
 `;
 
@@ -67,7 +81,7 @@ export const LienHeStyles = styled.div`
   align-items: center;
   min-height: 100vh;
   background: linear-gradient(rgba(255, 255, 255, 0.5), transparent),
-    url("/phuquoc.jpg");
+    url("/relaxing.jpg");
   width: 100%;
   height: 100%;
   background-position: center;
@@ -75,7 +89,7 @@ export const LienHeStyles = styled.div`
   background-repeat: no-repeat;
   .form-wrapper {
     min-height: 70vh;
-    min-width: 70vw;
+    min-width: 60vw;
     background: rgba(255, 255, 255, 0.9);
     border-radius: 1rem;
     box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1),
@@ -92,5 +106,9 @@ export const LienHeStyles = styled.div`
       flex-direction: column;
       justify-content: space-around;
     }
+    svg {
+      height: 25rem;
+    }
   }
+ 
 `;

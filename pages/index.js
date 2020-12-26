@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import styles from "../styles/Home.module.css";
 import Destinations from "../Components/Destinations";
+import Carousel from '../Components/Carousel';
 
 import { HotelTypes } from "./styles";
 export default function Home() {
@@ -12,9 +13,9 @@ export default function Home() {
         <title>Lux Journey</title>
       </Head>
       <section className="imageCover">
-        <div className={styles.carousel}>
-          {/* <img width="100%" src="/phuquoc.jpg"/> */}
-        </div>
+        {/* <div className={styles.carousel}>
+        </div> */}
+        <Carousel/>
       </section>
       <div
         style={{
@@ -88,16 +89,7 @@ export default function Home() {
         </div>
       </div>
 
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{" "}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
+      
     </div>
   );
 }

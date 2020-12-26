@@ -1,6 +1,7 @@
 import { DefaultSeo } from "next-seo";
 import "../styles/globals.css";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 import { StylesProvider } from "@material-ui/core/styles";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -32,7 +33,7 @@ function App({ Component, pageProps }) {
         <Header />
 
         <Component {...pageProps} />
-        {/* <Footer/> */}
+        <Footer/>
       </StylesProvider>
     </>
   );
