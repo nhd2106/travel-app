@@ -33,6 +33,9 @@ function App({ Component, pageProps }) {
         <Header />
 
         <Component {...pageProps} />
+        <button className="toTop">
+          to top
+        </button>
         <Footer/>
       </StylesProvider>
     </>
