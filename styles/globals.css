@@ -18,11 +18,4 @@ a {
   box-sizing: border-box;
 }
 
-.toTop {
-  position: fixed;
-  bottom: 10%;
-  right: 1rem;
-}
-.unVisible {
-  
-}
+

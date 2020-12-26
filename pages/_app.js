@@ -2,19 +2,58 @@ import { DefaultSeo } from "next-seo";
 import "../styles/globals.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import { StylesProvider } from "@material-ui/core/styles";
-import { useEffect } from "react";
+import { StylesProvider, makeStyles } from "@material-ui/core/styles";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { get, filter } from "lodash/fp";
 import Head from "next/head";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+import ArrowUpwardIcon from "@material-ui/icons/ArrowUpward";
+import Button from "@material-ui/core/Button";
+
 import SEO from "../next-seo.config";
 import { wrapper } from "../store";
 import { handlerGetPosts } from "../redux/actions/blog";
 
+const useStyles = makeStyles({
+  button: {
+    position: "fixed",
+    bottom: "10%",
+    right: "1rem",
+    boxShadow: "none",
+    outline: "none",
+    borderRadius: "50% 50%",
+    height: "4rem",
+    width: "4rem",
+  },
+
+});
 function App({ Component, pageProps }) {
+
+  const [is_visible, setIs_visible] = useState(false);
+  const toggleVisibility = () => {
+    if (window.pageYOffset > 100) {
+      setIs_visible(true)
+    } else {
+      setIs_visible(false);
+    }
+  };
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }
+  useEffect(() => {
+    document.addEventListener('scroll', function(e) {
+      toggleVisibility()
+    })
+  }, []);
+
+  const classes = useStyles();
+
   return (
     <>
       <Head>
@@ -33,10 +72,10 @@ function App({ Component, pageProps }) {
         <Header />
 
         <Component {...pageProps} />
-        <button className="toTop">
-          to top
-        </button>
-        <Footer/>
+        {is_visible ? <Button variant="contained" color="primary"  className={classes.button} onClick={scrollToTop}>
+          <ArrowUpwardIcon />
+        </Button> : null}
+        <Footer />
       </StylesProvider>
     </>
   );
