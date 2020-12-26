@@ -7,11 +7,15 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { get, filter } from "lodash/fp";
 import Head from "next/head";
+import Router from 'next/router';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+
 import ArrowUpwardIcon from "@material-ui/icons/ArrowUpward";
 import Button from "@material-ui/core/Button";
+import Waiting from '../Components/Waiting';
+import Loader from '../Components/Loader';
 
 import SEO from "../next-seo.config";
 import { wrapper } from "../store";
@@ -31,8 +35,16 @@ const useStyles = makeStyles({
 
 });
 function App({ Component, pageProps }) {
-
   const [is_visible, setIs_visible] = useState(false);
+  const [isLoading, setIsLoading] = useState(false)
+
+  Router.events.on('routeChangeStart', () => {
+    setIsLoading(true);
+  })
+  Router.events.on('routeChangeComplete', () => {
+    setIsLoading(false);
+
+  })
   const toggleVisibility = () => {
     if (window.pageYOffset > 300) {
       setIs_visible(true)
@@ -53,7 +65,7 @@ function App({ Component, pageProps }) {
   }, []);
 
   const classes = useStyles();
-
+  console.log(isLoading)
   return (
     <>
       <Head>
@@ -69,6 +81,8 @@ function App({ Component, pageProps }) {
       </Head>
       <StylesProvider injectFirst>
         <DefaultSeo {...SEO} />
+        {/* { isLoading ? <Waiting fullscreen type="StickyBallLoading" /> : null } */}
+        { isLoading ? <Loader color="#fff" type="cylon" /> : null }
         <Header />
 
         <Component {...pageProps} />

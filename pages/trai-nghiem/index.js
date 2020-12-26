@@ -2,14 +2,13 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import MediaCard from "../Components/Card";
-import { TraiNghiemStyles } from "./styles";
+import MediaCard from "../../Components/Card";
+import { TraiNghiemStyles } from "../styles";
 
-import { handlerGetPosts } from "../redux/actions/blog";
+import { handlerGetPosts } from "../../redux/actions/blog";
 
 export default function TraiNghiem(props) {
   const posts = useSelector(({ blog }) => blog.posts);
-  console.log(posts);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(handlerGetPosts());
@@ -163,13 +162,15 @@ export default function TraiNghiem(props) {
                 og_img: { url },
                 id,
                 title,
+                shortDesc
               } = post || "";
               return (
-                <Link href="/posts/[id]" as={`posts/${id}`}>
+                <Link href="/trai-nghiem/[id]" as={`trai-nghiem/${id}`}>
                   <a>
                     <MediaCard
                       image={`http://localhost:1337${url}`}
                       title={title}
+                      description={shortDesc}
                     />
                   </a>
                 </Link>

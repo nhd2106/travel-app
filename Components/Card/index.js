@@ -20,6 +20,7 @@ const useStyles = makeStyles({
 const MediaCard = ({
     image,
     title,
+    description
 }) => {
   const classes = useStyles();
 
@@ -32,12 +33,11 @@ const MediaCard = ({
           title="Contemplative Reptile"
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
+          <Typography noWrap={true} gutterBottom variant="h5" component="h2">
             { title }
           </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-            across all continents except Antarctica
+          <Typography noWrap={true} variant="body2" color="textSecondary" component="p">
+            {description}
           </Typography>
         </CardContent>
       </CardActionArea>

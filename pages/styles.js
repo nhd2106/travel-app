@@ -106,8 +106,15 @@ export const LienHeStyles = styled.div`
       flex-direction: column;
       justify-content: space-around;
     }
+    .left {
+      flex: 1 1 20rem;
+    }
+    .right {
+      flex: 3 1 20rem;
+    }
     svg {
-      height: 25rem;
+      height: 15rem;
+      width: 100%;
     }
   }
  
@@ -117,5 +124,8 @@ export const BlogStyles = styled.div`
   img {
     width: 100%;
     height: 100%;
+  }
+  iframe {
+    width: 100%;
   }
 `
