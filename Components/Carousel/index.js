@@ -5,13 +5,14 @@ import Slider from "react-slick";
 export default function AppCarousel() {
   const settings = {
     dots: false,
-    infinite: false,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
     initialSlide: 0,
     autoplay: true,
     autoplaySpeed: 3000,
+    infinite: true,
+    arrows: true,
   };
   return (
     <>
@@ -19,21 +20,21 @@ export default function AppCarousel() {
         <Slider style={{ overflow: "hidden" }} {...settings}>
           <div>
             <img
-              style={{ minHeight: '30vh', width: '100%', display: 'block' }}
+              style={{ minHeight: "30vh", width: "100%", display: "block" }}
               src="/phuquoc.jpg"
               alt="First slide"
             />
           </div>
           <div>
             <img
-              style={{ minHeight: '30vh', width: '100%', display: 'block' }}
+              style={{ minHeight: "30vh", width: "100%", display: "block" }}
               src="/phuquoc.jpg"
               alt="Third slide"
             />
           </div>
           <div>
             <img
-              style={{ minHeight: '30vh', width: '100%', display: 'block' }}
+              style={{ minHeight: "30vh", width: "100%", display: "block" }}
               src="/phuquoc.jpg"
               alt="Third slide"
             />

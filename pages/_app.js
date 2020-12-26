@@ -34,7 +34,7 @@ function App({ Component, pageProps }) {
 
   const [is_visible, setIs_visible] = useState(false);
   const toggleVisibility = () => {
-    if (window.pageYOffset > 100) {
+    if (window.pageYOffset > 300) {
       setIs_visible(true)
     } else {
       setIs_visible(false);
