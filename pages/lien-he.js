@@ -7,6 +7,7 @@ import {
   InputLabel,
   Button,
   Hidden,
+  TextareaAutosize,
 } from "@material-ui/core";
 import { LienHeStyles } from "./styles";
 
@@ -45,11 +46,7 @@ export default function LienHe(props) {
               </FormControl>
               <FormControl>
                 <InputLabel htmlFor="my-input">Nội dung</InputLabel>
-                <Input
-                  style={{ width: "80%" }}
-                  id="my-input"
-                  aria-describedby="my-helper-text"
-                />
+                <TextareaAutosize style={{ width: "80%" }} aria-label="minimum height" rowsMin={3} placeholder="Nội dung" />
               </FormControl>
               <FormControl>
                 <Button

@@ -27,7 +27,7 @@ export default function SignUp() {
     const classes = useStyles()
     return (
         <>
-            <Container >
+            <Container style={{ marginTop: '10vh'}}>
                 <SignInStyles>
                     <div className='top-sign-in' style={{ marginBottom: '20px' }}>
                         <Avatar style={{background: 'red'}}>

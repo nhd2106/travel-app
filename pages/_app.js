@@ -19,6 +19,7 @@ import Loader from "../Components/Loader";
 import SEO from "../next-seo.config";
 import { wrapper } from "../store";
 import { handlerGetPosts } from "../redux/actions/blog";
+import { auth } from '../utils/firebase/firebase.utils';
 
 const useStyles = makeStyles({
   button: {
