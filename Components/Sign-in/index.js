@@ -13,7 +13,7 @@ import {
     FormControlLabel
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import { SignInStyles } from '../Styles';
+import { SignInStyles } from '../styles';
 
 import { SignInWithGoogle, auth } from '../../utils/firebase/firebase.utils';
 import { signInHandler } from '../../redux/actions/user';

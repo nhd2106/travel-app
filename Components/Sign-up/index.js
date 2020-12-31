@@ -12,7 +12,7 @@ import {
     Hidden
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import { SignInStyles } from '../Styles';
+import { SignInStyles } from '../styles';
 
 const useStyles = makeStyles({
     root: {

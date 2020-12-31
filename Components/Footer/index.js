@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Container } from "@material-ui/core";
 
-import { FooterStyles } from "../Styles";
+import { FooterStyles } from "../styles";
 
 export default function Footer() {
   return (

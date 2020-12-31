@@ -1,4 +1,4 @@
-import { NavigationsStyled } from "../Styles";
+import { NavigationsStyled } from "../styles";
 import DNavbar from "./Navbar";
 export default function Header({ navigations }) {
   return (

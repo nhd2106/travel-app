@@ -13,12 +13,9 @@ import "slick-carousel/slick/slick-theme.css";
 import ArrowUpwardIcon from "@material-ui/icons/ArrowUpward";
 import Button from "@material-ui/core/Button";
 import Waiting from "../Components/Waiting";
-import Loader from "../Components/Loader";
 
 import SEO from "../next-seo.config";
 import { wrapper } from "../store";
-import { handlerGetPosts } from "../redux/actions/blog";
-import { auth } from '../utils/firebase/firebase.utils';
 import { signInHandler } from '../redux/actions/user';
 
 const useStyles = makeStyles({

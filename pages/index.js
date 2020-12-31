@@ -5,7 +5,7 @@ import styles from "../styles/Home.module.css";
 import Destinations from "../Components/Destinations";
 import Carousel from "../Components/Carousel";
 
-import { HotelTypes } from "./Styles";
+import { HotelTypes } from "./styles";
 export default function Home() {
   return (
     <div>
