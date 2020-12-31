@@ -1,4 +1,4 @@
-import SignIn from '../Components/Sign-in';
+import SignIn from '../components/Sign-in';
 
 import { auth } from '../utils/firebase/firebase.utils';
 

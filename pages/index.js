@@ -2,8 +2,8 @@ import Head from "next/head";
 import Link from "next/link";
 
 import styles from "../styles/Home.module.css";
-import Destinations from "../Components/Destinations";
-import Carousel from "../Components/Carousel";
+import Destinations from "../components/Destinations";
+import Carousel from "../components/Carousel";
 
 import { HotelTypes } from "./styles";
 export default function Home() {
