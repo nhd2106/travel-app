@@ -20,6 +20,7 @@ import SEO from "../next-seo.config";
 import { wrapper } from "../store";
 import { handlerGetPosts } from "../redux/actions/blog";
 import { auth } from '../utils/firebase/firebase.utils';
+import { signInHandler } from '../redux/actions/user';
 
 const useStyles = makeStyles({
   button: {
@@ -37,7 +38,9 @@ const useStyles = makeStyles({
 function App({ Component, pageProps }) {
   const [is_visible, setIs_visible] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-
+  const user = useSelector(({ user } ) => user.user );
+  console.log(user)
+  const dispatch = useDispatch();
   Router.events.on("routeChangeStart", () => {
     setIsLoading(true);
   });
@@ -61,8 +64,12 @@ function App({ Component, pageProps }) {
     document.addEventListener("scroll", function (e) {
       toggleVisibility();
     });
+   if(!user) {
+     const localUser = JSON.parse(window.localStorage.getItem('user'));
+     if(localUser) dispatch(signInHandler(localUser));
+   }
   }, []);
-
+  console.log(user)
   const classes = useStyles();
   return (
     <>
@@ -81,7 +88,7 @@ function App({ Component, pageProps }) {
         <DefaultSeo {...SEO} />
         {isLoading ? <Waiting fullscreen type="WindMillLoading" /> : null}
         {/* { isLoading ? <Loader color="#fff" type="cylon" /> : null } */}
-        <Header />
+        <Header user = {user}/>
 
         <Component {...pageProps} />
         {is_visible ? (

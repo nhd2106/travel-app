@@ -3,6 +3,8 @@ import {
     Avatar,
 } from '@material-ui/core'
 import HttpsIcon from '@material-ui/icons/Https';
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 import {
     TextField,
     Button,
@@ -13,7 +15,10 @@ import {
 import { makeStyles } from '@material-ui/core/styles';
 import { SignInStyles } from '../styles';
 
-import { SignInWithGoogle } from '../../utils/firebase/firebase.utils';
+import { SignInWithGoogle, auth } from '../../utils/firebase/firebase.utils';
+import { signInHandler } from '../../redux/actions/user';
+import { useDispatch } from 'react-redux';
+
 
 
 const useStyles = makeStyles({
@@ -26,7 +31,23 @@ const useStyles = makeStyles({
   });
 
 export default function SignIn() {
-    const classes = useStyles()
+    const router = useRouter();
+    const [user, setUser ] = useState(null);
+    const dispatch = useDispatch()
+    useEffect(() => {
+        auth.onAuthStateChanged(user => {
+          setUser(user);
+          if(user) {
+            dispatch(signInHandler(user));
+            window.localStorage.setItem('user', JSON.stringify(user));
+          }
+        })
+      }, [user])
+    const classes = useStyles();
+    const handleSign = async () => {
+        await SignInWithGoogle();
+        router.push('/');
+    }
     return (
         <>
             <Container style={{ marginTop: '10vh'}}>
@@ -39,11 +60,11 @@ export default function SignIn() {
                     </div>
                     <div className='form-wraper'>
                         <form className='top-sign-in'>
-                        <TextField autoComplete style={{ marginBottom: '20px' }} id="outlined-basic " label="Tên người dùng" variant="outlined" />
+                        <TextField  style={{ marginBottom: '20px' }} id="outlined-basic " label="Tên người dùng" variant="outlined" />
                         <TextField style={{ marginBottom: '20px' }} id="outlined-basic" label="Mật khẩu" variant="outlined" />
                         <FormControlLabel control={<Checkbox />} label="Ghi nhớ đăng nhập"/>
                         <Button style={{width:'100%',background: '#3B8AD9', color: 'white', marginBottom: '1rem'}}>Đăng nhập</Button>
-                        <Button onClick={() => SignInWithGoogle()} style={{width:'100%',background: 'red', color: 'white'}}>Đăng nhập với google</Button>
+                        <Button onClick={() => handleSign()} style={{width:'100%',background: 'red', color: 'white'}}>Đăng nhập với google</Button>
                         </form>
                     </div>
                 </SignInStyles>

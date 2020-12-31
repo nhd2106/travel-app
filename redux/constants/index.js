@@ -23,6 +23,8 @@ export const USER = {
     },
     update: 'USER_UPDATE',
     userByName: 'USER_BYNAME',
+    signin: 'SIGN_IN',
+    signOut: 'SIGN_OUT'
     
 }
 export const BLOG = {

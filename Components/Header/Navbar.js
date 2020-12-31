@@ -20,6 +20,10 @@ import Container from "@material-ui/core/Container";
 import DDrawer from "./Drawer";
 import LockOpenIcon from "@material-ui/icons/LockOpen";
 import AssignmentTurnedInIcon from "@material-ui/icons/AssignmentTurnedIn";
+import { useDispatch, useSelector } from "react-redux";
+import { signOutHandler } from '../../redux/actions/user';
+
+import { auth as googleAuth } from '../../utils/firebase/firebase.utils';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -69,6 +73,15 @@ export default function DNavbar({ navigations }) {
     }
     setOpen(open);
   };
+  const dispatch = useDispatch();
+  const user = useSelector(({  user }) => user.user);
+  const signOut = () => {
+    window.localStorage.clear()
+    googleAuth.signOut();
+    dispatch(signOutHandler());
+    handleClose();
+  };
+  
   return (
     <>
       <AppBar position="static" style={{ background: "#393A44" }}>
@@ -137,7 +150,7 @@ export default function DNavbar({ navigations }) {
                 })}
               </Grid>
             </Grid>
-            {auth ? (
+            {user ? (
               <div>
                 <Tooltip title="xem thông tin">
                   <IconButton
@@ -166,7 +179,9 @@ export default function DNavbar({ navigations }) {
                   onClose={handleClose}
                 >
                   <MenuItem onClick={handleClose}>Tài khoản</MenuItem>
-                  <MenuItem onClick={handleClose}>Đăng xuất</MenuItem>
+                  <MenuItem onClick={() => {
+                    signOut()
+                  }}>Đăng xuất</MenuItem>
                 </Menu>
               </div>
             ) : (
