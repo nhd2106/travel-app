@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { useDispatch, useSelector } from "react-redux";
 import { Container } from "@material-ui/core";
 
-import { BlogStyles, BlogCover } from "../styles";
+import { BlogStyles, BlogCover } from "../Styles";
 
 import { handlerGetPostDetails } from "../../redux/actions/blog";
 
