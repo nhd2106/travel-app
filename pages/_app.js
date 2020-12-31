@@ -5,7 +5,6 @@ import Footer from "../components/Footer";
 import { StylesProvider, makeStyles } from "@material-ui/core/styles";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { get, filter } from "lodash/fp";
 import Head from "next/head";
 import Router from "next/router";
 import "slick-carousel/slick/slick.css";
