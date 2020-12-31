@@ -39,7 +39,6 @@ function App({ Component, pageProps }) {
   const [is_visible, setIs_visible] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const user = useSelector(({ user } ) => user.user );
-  console.log(user)
   const dispatch = useDispatch();
   Router.events.on("routeChangeStart", () => {
     setIsLoading(true);
@@ -61,6 +60,10 @@ function App({ Component, pageProps }) {
     });
   };
   useEffect(() => {
+    const jssStyles = document.querySelector('#jss-server-side');
+      if (jssStyles) {
+        jssStyles.parentElement.removeChild(jssStyles);
+   }  
     document.addEventListener("scroll", function (e) {
       toggleVisibility();
     });
@@ -69,7 +72,6 @@ function App({ Component, pageProps }) {
      if(localUser) dispatch(signInHandler(localUser));
    }
   }, []);
-  console.log(user)
   const classes = useStyles();
   return (
     <>
@@ -101,7 +103,7 @@ function App({ Component, pageProps }) {
             <ArrowUpwardIcon />
           </Button>
         ) : null}
-        <Footer />
+        {/* <Footer /> */}
       </StylesProvider>
     </>
   );

@@ -1,4 +1,3 @@
-import React from 'react';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
@@ -79,7 +78,7 @@ export default function DDrawer({ open, toggleDrawer, navigations }) {
   return (
     <div>
       {(
-        <React.Fragment >
+        <>
           <SwipeableDrawer
             anchor={'left'}
             open={open}
@@ -92,7 +91,7 @@ export default function DDrawer({ open, toggleDrawer, navigations }) {
           >
             {list()}
           </SwipeableDrawer>
-        </React.Fragment>
+        </>
       )}
     </div>
   );

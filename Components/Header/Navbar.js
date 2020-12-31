@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 import { useRouter } from "next/router";
 import Link from "next/link";
@@ -53,8 +53,8 @@ export default function DNavbar({ navigations }) {
   const currentSlug = router.asPath;
   const classes = useStyles();
   const [open, setOpen] = useState(false);
-  const [auth, setAuth] = React.useState(false);
-  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [auth, setAuth] = useState(false);
+  const [anchorEl, setAnchorEl] = useState(null);
   const openMenu = Boolean(anchorEl);
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);

@@ -1,9 +1,6 @@
 import Link from "next/link";
 
 import Slider from "react-slick";
-import { 
-  DestinationsStyled
-} from '../styles';
 
 export default function Destinations(props) {
   const settings = {
