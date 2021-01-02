@@ -7,9 +7,10 @@ import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
+import LoyaltyIcon from '@material-ui/icons/Loyalty';
 import MailIcon from '@material-ui/icons/Mail';
 import Link from 'next/link';
+import HotelIcon from '@material-ui/icons/Hotel';
 import { useRouter } from 'next/router';
 
 const useStyles = makeStyles({
@@ -65,7 +66,7 @@ export default function DDrawer({ open, toggleDrawer, navigations }) {
           { title: "Liên hệ", slug: '/lien-he'},
       ].map(({ title, slug }, index) => (
           <ListItem button key={slug}>
-            <ListItemIcon style={{color: 'white'}}>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+            <ListItemIcon style={{color: 'white'}}>{index % 2 === 0 ? <HotelIcon /> : <LoyaltyIcon />}</ListItemIcon>
             <Link href={`${slug}`}>
                   <a className={clsx(classes.aTag, currentSlug===`/${slug}`? classes.active: '')}>{title}</a>
                 </Link>

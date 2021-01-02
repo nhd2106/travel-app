@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const NavigationsStyled = styled.div`
   position: sticky;
@@ -30,65 +30,57 @@ export const NavigationsStyled = styled.div`
     }
   }
   .MuiDrawer-paper {
-    background-color:  '#393A44';
+    background-color: "#393A44";
   }
 `;
 
 export const DestinationsStyled = styled.div`
-// .wrapper {
-//   display: grid;
-//   grid-template-columns: repeat(4, 1fr);
-// }
-// a {
-//   text-decoration: none;
-//   color: black;
-//   display: flex;
-//   jutify-content: center;
-//   align-items: center;
-//   width: 12rem;
-// }
-//   @media (max-width:  959px) {
-//     .wrapper {
-//         grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr))
-//     }
-//   } 
-//   @media (max-width: 767px) {
-    
-//     a {
-//       flex-direction: column;
-//       width: 5rem;
-//     }
-//   }
-
-  .slick-slide {
-    span:nth-child(1) {
-      display: flex;
-      justify-content: center;
-      text-align: left;
+  margin-bottom: 1.5rem;
+  .destination {
+    display: flex;
+    text-decoration: none;
+    color: black;
+    jutify-content: center;
+    align-items: center;
+    img {
+      width: 64px;
+      height: 64px;
     }
+    margin-bottom: 10px;
   }
-  @media screen and ( max-width: 599px ) {
+  // .slick-slide {
+    
+  // }
+  @media screen and (max-width: 599px) {
     img {
       width: 100%;
     }
     .slick-slide {
       span: nth-child(1) {
+
       }
     }
     .slick-next {
-      right: 1rem !important;
+      right: -30px !important;
+      opacity: 1;
+    }
+    .slick-prev {
+      left: -30px !important;
+      opacity: 1;
+    }
+    .slick-next::before {
+      opacity: 0.75 !important;
     }
   }
-
-`
+`;
 
 export const FooterStyles = styled.div`
-  background: #1BA0E2;
+  background: #1ba0e2;
   // height: 45vh;
   color: white;
   .footer {
     width: 80%;
-    margin: auto ;
+    margin: auto;
     padding: 5rem 0;
     display: flex;
     justify-content: space-between;
@@ -111,7 +103,7 @@ export const FooterStyles = styled.div`
     .left {
       flex: 1 1 40rem;
       span {
-        color: #BAE2F6;
+        color: #bae2f6;
         margin-top: 1rem;
       }
       .social {
@@ -142,7 +134,7 @@ export const SignInStyles = styled.div`
   flex-direction: column;
   align-items: center;
   text-align: center;
-  .form-wraper{
+  .form-wraper {
     width: 100%;
     max-width: 450px;
   }
@@ -151,8 +143,8 @@ export const SignInStyles = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    .MuiFormControl-root{
+    .MuiFormControl-root {
       width: 100%;
     }
   }
-`
+`;

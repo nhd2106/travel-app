@@ -1,7 +1,7 @@
 import { DefaultSeo } from "next-seo";
 import "../styles/globals.css";
-import Header from "../Components/Header";
-import Footer from "../Components/Footer";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 import { StylesProvider, makeStyles } from "@material-ui/core/styles";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";

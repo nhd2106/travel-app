@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import MediaCard from "../../Components/Card";
+import MediaCard from "../../components/Card";
 import { TraiNghiemStyles } from "../styles";
 
 import Slider from "react-slick";
