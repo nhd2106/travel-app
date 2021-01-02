@@ -110,6 +110,8 @@ export default function DNavbar({ navigations }) {
             <div
               style={{
                 flex: " 1 1 40rem",
+                display: 'flex',
+                alignItems: "center",
               }}
             >
               <Link href="/">

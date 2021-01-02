@@ -35,28 +35,48 @@ export const NavigationsStyled = styled.div`
 `;
 
 export const DestinationsStyled = styled.div`
-.wrapper {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-}
-a {
-  text-decoration: none;
-  color: black;
-  display: flex;
-  jutify-content: center;
-  align-items: center;
-  width: 12rem;
-}
-  @media (max-width:  959px) {
-    .wrapper {
-        grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr))
-    }
-  } 
-  @media (max-width: 767px) {
+// .wrapper {
+//   display: grid;
+//   grid-template-columns: repeat(4, 1fr);
+// }
+// a {
+//   text-decoration: none;
+//   color: black;
+//   display: flex;
+//   jutify-content: center;
+//   align-items: center;
+//   width: 12rem;
+// }
+//   @media (max-width:  959px) {
+//     .wrapper {
+//         grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr))
+//     }
+//   } 
+//   @media (max-width: 767px) {
     
-    a {
-      flex-direction: column;
-      width: 5rem;
+//     a {
+//       flex-direction: column;
+//       width: 5rem;
+//     }
+//   }
+
+  .slick-slide {
+    span:nth-child(1) {
+      display: flex;
+      justify-content: center;
+      text-align: left;
+    }
+  }
+  @media screen and ( max-width: 599px ) {
+    img {
+      width: 100%;
+    }
+    .slick-slide {
+      span: nth-child(1) {
+      }
+    }
+    .slick-next {
+      right: 1rem !important;
     }
   }
 
@@ -69,7 +89,6 @@ export const FooterStyles = styled.div`
   .footer {
     width: 80%;
     margin: auto ;
-    margin-top: 5rem;
     padding: 5rem 0;
     display: flex;
     justify-content: space-between;

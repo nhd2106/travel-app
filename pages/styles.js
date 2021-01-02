@@ -11,8 +11,9 @@ export const HotelTypes = styled.div`
     text-align: center;
   }
   .wrapper {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1rem;
     span {
       font-weight: bold;
     }
@@ -22,9 +23,13 @@ export const HotelTypes = styled.div`
     border-radius: 1rem;
   }
   span {
-    font-size: calc(1vw + 0.5rem);
+    font-size: calc(1vw + 0.8rem);
   }
-  @media screen and (max-width: 720px) {
+  @media screen and (max-width: 599px) {
+    .wrapper {
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+
+    }
   }
 `;
 export const TraiNghiemStyles = styled.div`

@@ -1,37 +1,234 @@
 import Link from "next/link";
-
 import Slider from "react-slick";
 
+import { DestinationsStyled } from '../styles';
+
 export default function Destinations(props) {
-  const settings = {
-    dots: false,
-    infinite: true,
+  const settings =  {
+    infinite: false,
     speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1
+    slidesToShow: 4,
+    slidesToScroll: 4,
+    initialSlide: 0,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
   };
 
   return (
-    <Slider {...settings}>
-      <div>
-            <h3>1</h3>
-          </div>
-          <div>
-            <h3>2</h3>
-          </div>
-          <div>
-            <h3>3</h3>
-          </div>
-          <div>
-            <h3>4</h3>
-          </div>
-          <div>
-            <h3>5</h3>
-          </div>
-          <div>
-            <h3>6</h3>
-          </div>
+    <DestinationsStyled>
+      <Slider {...settings}>
+      <Link href="/">
+        <a>
+          <span
+            style={{
+              flex: "1 1 10rem",
+              paddingRight: "1rem",
+            }}
+          >
+            <img
+              src="/hcm.jpg"
+              style={{
+                borderRadius: "1rem",
+               
+              }}
+            />
+          </span>
+          <span
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              flex: "3 1 10rem",
+              justifyContent: "flex-start",
+            }}
+          >
+            <span>
+              <b>Phú Quốc</b>
+            </span>
+            <span>15 phút lái xe</span>
+          </span>
+        </a>
+      </Link>
+      <Link href="/phuquoc.jpg">
+        <a>
+          <span
+            style={{
+              flex: "1 1 10rem",
+              paddingRight: "1rem",
+            }}
+          >
+            <img
+              src="/hcm.jpg"
+              style={{
+                borderRadius: "1rem",
+               
+              }}
+            />
+          </span>
+          <span
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              flex: "3 1 10rem",
+              justifyContent: "flex-start",
+            }}
+          >
+            <span>
+              <b>Đà Lạt</b>
+            </span>
+            <span>15 phút lái xe</span>
+          </span>
+        </a>
+      </Link>
+      <Link href="/">
+        <a>
+          <span
+            style={{
+              flex: "1 1 10rem",
+              paddingRight: "1rem",
+            }}
+          >
+            <img
+              src="/hcm.jpg"
+              style={{
+                borderRadius: "1rem",
+               
+              }}
+            />
+          </span>
+          <span
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              flex: "3 1 10rem",
+              justifyContent: "flex-start",
+            }}
+          >
+            <span>
+              <b>Nha Trang</b>
+            </span>
+            <span>15 phút lái xe</span>
+          </span>
+        </a>
+      </Link>
+      <Link href="/">
+        <a>
+          <span
+            style={{
+              flex: "1 1 10rem",
+              paddingRight: "1rem",
+            }}
+          >
+            <img
+              src="/hcm.jpg"
+              style={{
+                borderRadius: "1rem",
+               
+              }}
+            />
+          </span>
+          <span
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              flex: "3 1 10rem",
+              justifyContent: "flex-start",
+            }}
+          >
+            <span>
+              <b>Đà Nẵng</b>
+            </span>
+            <span>15 phút lái xe</span>
+          </span>
+        </a>
+      </Link>
+      <Link href="/">
+        <a>
+          <span
+            style={{
+              flex: "1 1 10rem",
+              paddingRight: "1rem",
+            }}
+          >
+            <img
+              src="/hcm.jpg"
+              style={{
+                borderRadius: "1rem",
+               
+              }}
+            />
+          </span>
+          <span
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              flex: "3 1 10rem",
+              justifyContent: "flex-start",
+            }}
+          >
+            <span>
+              <b>Lý Sơn</b>
+            </span>
+            <span>15 phút lái xe</span>
+          </span>
+        </a>
+      </Link>
+      <Link href="/">
+        <a>
+          <span
+            style={{
+              flex: "1 1 10rem",
+              paddingRight: "1rem",
+            }}
+          >
+            <img
+              src="/hcm.jpg"
+              style={{
+                borderRadius: "1rem",
+               
+              }}
+            />
+          </span>
+          <span
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              flex: "3 1 10rem",
+              justifyContent: "flex-start",
+            }}
+          >
+            <span>
+              <b>Tuy Hòa</b>
+            </span>
+            <span>15 phút lái xe</span>
+          </span>
+        </a>
+      </Link>
     </Slider>
+    </DestinationsStyled>
     // <DestinationsStyled>
     // <div className="wrapper">
     // <Link href="/">
