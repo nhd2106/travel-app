@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo } from "react";
+import { NextSeo } from "next-seo";
 import { useRouter } from "next/router";
 import { useDispatch, useSelector } from "react-redux";
 import { Container } from "@material-ui/core";
@@ -20,19 +21,28 @@ export default function Post() {
     if (postDetails) return { __html: postDetails.content };
   }, [postDetails]);
   const coverUrl = url ? `http://localhost:1337${url}` : "";
+  const SEO = {
+    title: postDetails.title || "",
+  };
   return (
-    <BlogStyles>
-      {coverUrl ? <BlogCover coverUrl={coverUrl}>
-        <div className="cover"/>
-      </BlogCover> : null}
+    <>
+      <NextSeo {...SEO}/>
 
-      <div
-        style={{
-          width: "80%",
-          margin: "auto",
-        }}
-        dangerouslySetInnerHTML={render}
-      />
-    </BlogStyles>
+      <BlogStyles>
+        {coverUrl ? (
+          <BlogCover coverUrl={coverUrl}>
+            <div className="cover" />
+          </BlogCover>
+        ) : null}
+
+        <div
+          style={{
+            width: "80%",
+            margin: "auto",
+          }}
+          dangerouslySetInnerHTML={render}
+        />
+      </BlogStyles>
+    </>
   );
 }

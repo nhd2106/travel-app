@@ -1,16 +1,20 @@
-import SignIn from '../components/Sign-in';
+import { NextSeo } from "next-seo";
 
-import { auth } from '../utils/firebase/firebase.utils';
+import SignIn from "../components/Sign-in";
 
-const  DangNhap = (props) => {
-    
-    
+import { auth } from "../utils/firebase/firebase.utils";
 
-    return (
-        <>
-            <SignIn/>
-        </>
-    )
+const DangNhap = (props) => {
+  const SEO = {
+    title: "Đăng nhập",
+  };
+
+  return (
+    <>
+      <NextSeo {...SEO} />
+      <SignIn />
+    </>
+  );
 };
 
 export default DangNhap;

@@ -1,10 +1,17 @@
-import SignUp from '../components/Sign-up';
+import { NextSeo } from "next-seo";
 
-export default function DangKy(props) {
-    
-    return (
-        <>
-            <SignUp/>
-        </>
-    )
+import SignUp from "../components/Sign-up";
+
+const DangKy = (props)  => {
+  const SEO = {
+    title: "Đăng ký",
+  };
+  return (
+    <>
+      <NextSeo {...SEO} />
+      <SignUp />
+    </>
+  );
 }
+
+export default DangKy;

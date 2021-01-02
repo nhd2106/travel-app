@@ -10,9 +10,15 @@ import {
 } from "@material-ui/core";
 import { LienHeStyles } from "./styles";
 
+import { NextSeo } from 'next-seo';
+
 export default function LienHe(props) {
+  const SEO = {
+    title: 'Liên hệ'
+  }
   return (
     <>
+      <NextSeo {...SEO}/>
       <Hidden xsDown>
         <LienHeStyles>
           <div className="form-wrapper">
