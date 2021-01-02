@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   appBackground: {
-    background: "#393A44",
+    background: "#1BA0E2",
   },
   linkMargin: {
     marginRight: "20px",
@@ -60,6 +60,10 @@ export default function DNavbar({ navigations }) {
     setAnchorEl(event.currentTarget);
   };
 
+  const handleRouter = (link) => {
+    router.push(link);
+    setAnchorEl(null);
+  };
   const handleClose = () => {
     setAnchorEl(null);
   };
@@ -84,7 +88,7 @@ export default function DNavbar({ navigations }) {
   
   return (
     <>
-      <AppBar position="static" style={{ background: "#393A44" }}>
+      <AppBar position="sticky" style={{ background: "#1BA0E2" }}>
         <Toolbar>
           <Hidden smUp>
             <IconButton
@@ -179,6 +183,7 @@ export default function DNavbar({ navigations }) {
                   onClose={handleClose}
                 >
                   <MenuItem onClick={handleClose}>Tài khoản</MenuItem>
+                  <MenuItem onClick={() => handleRouter('http://localhost:1337/admin')}>Quản lý</MenuItem>
                   <MenuItem onClick={() => {
                     signOut()
                   }}>Đăng xuất</MenuItem>
@@ -212,16 +217,8 @@ export default function DNavbar({ navigations }) {
                   open={openMenu}
                   onClose={handleClose}
                 >
-                  <Link href="dang-nhap">
-                    <a>
-                      <MenuItem onClick={handleClose}>Đăng nhập</MenuItem>
-                    </a>
-                  </Link>
-                  <Link href="dang-ky">
-                    <a>
-                      <MenuItem onClick={handleClose}>Đăng ký</MenuItem>
-                    </a>
-                  </Link>
+                  <MenuItem onClick={() => handleRouter('/dang-nhap')}>Đăng nhập</MenuItem>
+                  <MenuItem onClick={() => handleRouter('/dang-ky')}>Đăng ký</MenuItem>
                 </Menu>
               </div>
             )}

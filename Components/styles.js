@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 
 export const NavigationsStyled = styled.div`
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   color: white;
   .top-header {
     background-color: #ffa900;
@@ -60,126 +63,58 @@ a {
 `
 
 export const FooterStyles = styled.div`
-a {
-  text-decoration: none;
-  color: #757575;
-  &:hover {
-    color: #FFA900;
-  }
-}
-  position: position: fixed;;
-  .top-footer{
-    margin-top: 15px;
-    padding: 30px 0px;
-
-    border-top: 1px solid #ebebeb;
-  }
-  .middle-footer{
-    margin-top: 15px;
-    padding: 30px 0px;
-    .email-input {
-      margin-right: 10px;
-      width: 70%;
-    }
-    input {
-      padding: 10px 15px;
-      border: 1px solid lightgray;
-      &:focus {
-        outline: none;
-      }
-    }
-
-    .getInfo-button {
-      background:#FFA900;
-      color: white;
-      border: 1px solid transparent;
-    }
-    border-top: 1px solid #ebebeb;
-    .social-network{
-      ul {
-        padding: 0px;
-      }
-      li {
-        position: relative;
-        float: left;
-        list-style: none;
-        margin-right: 10px;
-        &:nth-child(1) {
-          background: #455b94;
-          border-radius: 50%;
-          &:hover {
-            position: relative;
-            background: white;
-            border: 1px solid #455b94;
-            color: #455b94;
-            padding: 0;
-          }
-        }
-        &:nth-child(2) {
-          position: relative;
-          background: #43E2E4;
-          border-radius: 50%;
-          &:hover {
-            background: white;
-            border: 1px solid #455b94;
-            padding: 0;
-          }
-        }
-        &:nth-child(3) {
-          position: relative;
-          background: #FC4B3E;
-          border-radius: 50%;
-          &:hover {
-            background: white;
-            border: 1px solid #455b94;
-            padding: 0;
-          }
-        }
+  background: #1BA0E2;
+  // height: 45vh;
+  color: white;
+  .footer {
+    width: 80%;
+    margin: auto ;
+    margin-top: 5rem;
+    padding: 5rem 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #3face2;
+    .right {
+      display: flex;
+      flex: 3 1 40rem;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      .helps {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         a {
-          display: inline-block;
-          width: 33px;
-          height: 33px;
-          text-align: center;
-          line-height: 33px;
-          border-radius: 50%;
-          text-decoration: none;
-          color: white;
-          position: relative;
-          
+          margin-top: 1rem;
         }
-        .facbook-link:hover {
-          color: #455b94;
-          
-        }
-        .insta-link:hover {
-          color: #43E2E4;
-        }
-        .utube-link:hover {
-          color: #FC4B3E;
+      }
+    }
+    .left {
+      flex: 1 1 40rem;
+      span {
+        color: #BAE2F6;
+        margin-top: 1rem;
+      }
+      .social {
+        width: 30%;
+        display: flex;
+        list-style: none;
+        justify-content: space-between;
+        align-items: center;
+        margin: 2rem 0;
+        li {
+          margin-right: 1rem;
         }
       }
     }
   }
-
-
-
-  .bottom-footer {
-    position: relative;
-    text-align: center;
-    border-top: 1px solid #ebebeb;
+  .copyright {
+    display: flex;
     align-items: center;
-    vertical-align: center;
-    margin-bottom: 20px;
-    div {
-      margin-top: 20px;
-      margin-top: 20px;
-    }
-    span:last-child {
-        color: #FFB000;
-        font-weight: bold;
-    }
+    justify-content: center;
+    flex-direction: column;
+    padding-bottom: 2rem;
   }
-
 `;
 
 export const SignInStyles = styled.div`

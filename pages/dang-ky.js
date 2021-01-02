@@ -1,4 +1,4 @@
-import SignUp from '../components/Sign-up';
+import SignUp from '../Components/Sign-up';
 
 export default function DangKy(props) {
     

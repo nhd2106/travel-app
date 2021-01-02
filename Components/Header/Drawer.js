@@ -24,7 +24,7 @@ const useStyles = makeStyles({
       textDecoration: 'none',
   },
   paperAnchorLeft : {
-    background: '#393A44',
+    background: '#1BA0E2',
   },
   active: {
     color: 'yellow',

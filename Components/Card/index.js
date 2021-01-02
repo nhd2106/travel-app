@@ -51,7 +51,6 @@ export default function MediaCard({ image, title, description, id }) {
             }
             title={title}
             subheader="September 14, 2016"
-            noWrap={true}
           />
           <CardMedia
             className={classes.media}
@@ -60,7 +59,7 @@ export default function MediaCard({ image, title, description, id }) {
           />
           <CardContent>
             <Typography
-              noWrap={true}
+
               variant="body2"
               color="textSecondary"
               component="p"
@@ -75,7 +74,6 @@ export default function MediaCard({ image, title, description, id }) {
           url="https://reactjsexample.com/tag/popup/"
           quote={title}
           className="Demo__some-network__share-button"
-          appId="521270401588372"
         >
           <FacebookIcon  size={32} round />
         </FacebookShareButton>

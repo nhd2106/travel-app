@@ -219,6 +219,7 @@ export default function TraiNghiem(props) {
               } = post || "";
               return (
                 <MediaCard
+                  key={id}
                   image={`http://localhost:1337${url}`}
                   title={title}
                   description={shortDesc}
@@ -242,6 +243,7 @@ export default function TraiNghiem(props) {
               } = post || "";
               return (
                 <MediaCard
+                key={id}
                   image={`http://localhost:1337${url}`}
                   title={title}
                   description={shortDesc}
@@ -269,6 +271,7 @@ export default function TraiNghiem(props) {
                   title={title}
                   description={shortDesc}
                   id={id}
+                  key={id}
                 />
               );
             })}
@@ -288,6 +291,7 @@ export default function TraiNghiem(props) {
               } = post || "";
               return (
                 <MediaCard
+                  key={id}
                   image={`http://localhost:1337${url}`}
                   title={title}
                   description={shortDesc}

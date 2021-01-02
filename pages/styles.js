@@ -8,18 +8,21 @@ export const HotelTypes = styled.div`
   a {
     color: black;
     text-decoration: none;
+    text-align: center;
   }
   .wrapper {
     display: flex;
     justify-content: space-between;
     span {
-      font-size: 1.4rem;
       font-weight: bold;
     }
   }
   img {
-    width: 90%;
+    width: 100%;
     border-radius: 1rem;
+  }
+  span {
+    font-size: calc(1vw + 0.5rem);
   }
   @media screen and (max-width: 720px) {
   }
@@ -119,7 +122,6 @@ export const LienHeStyles = styled.div`
     display: flex;
     justify-content: center;
     alin-items: center;
-
     .right,
     .left {
       text-align: center;
