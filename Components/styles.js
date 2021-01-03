@@ -11,7 +11,7 @@ export const NavigationsStyled = styled.div`
       cursor: pointer;
     }
   }
-  .brand {
+  .brand 
     cursor: pointer;
     background-color: white;
     border-radius: 50%;
@@ -88,7 +88,7 @@ export const FooterStyles = styled.div`
     border-bottom: 1px solid #3face2;
     .right {
       display: flex;
-      flex: 3 1 40rem;
+      flex: 3 1 20rem;
       flex-wrap: wrap;
       justify-content: space-between;
       .helps {
@@ -101,7 +101,7 @@ export const FooterStyles = styled.div`
       }
     }
     .left {
-      flex: 1 1 40rem;
+      flex: 1 1 20rem;
       span {
         color: #bae2f6;
         margin-top: 1rem;
